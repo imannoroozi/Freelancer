@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Freelance</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_page_fragment">PageFragment</string>
+    <string name="title_activity_sample_fragment_pager_adapter">SampleFragmentPagerAdapter</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_upload_image">UploadImageActivity</string>
+
+
+    <string name="btnTakePicture">Capture Image</string>
+    <string name="btnRecordVideo">Record Video</string>
+    <string name="or">(or)</string>
+    <string name="btnUploadToServer">Upload to Server</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="information_title">مشخصات شما</string>
+    <string name="profile_email">ایمیل / نام کاربری</string>
+    <string name="profile_display_name">نام نمایشی</string>
+    <string name="profile_display_password">کلمه عبور</string>
+    <string name="profie_logout">خروج از حساب کاربری</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_bfvs">bfvs</string>
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer closed</string>
+    <string name="title_activity_view_profile">ViewProfileActivity</string>
+    <string name="title_activity_base_list">BaseListActivity</string>
+    <string name="yes">بله</string>
+    <string name="no">نه</string>
+    <string name="title_activity_show_comments">ShowCommentsActivity</string>
+    <string name="title_activity_update_skills">UpdateSkillsActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="avg_bids">میانگین پیشنهاد</string>
+    <string name="bids_number">تعداد پیشنهاد</string>
+    <string name="put_bid">پیشنهاد دهید</string>
+    <string name="needed_skills">مهارت های لازم</string>
+    <string name="employer_info">مشخصات کارفرما</string>
+    <string name="milestones">مراحل انجام پروژه</string>
+    <string name="toman">تومان</string>
+    <string name="day">روز</string>
+    <string name="total_duration">مدت زمان</string>
+    <string name="total_cost">هزینه پیشنهادی</string>
+    <string name="milestone">مرحله 1</string>
+    <string name="cost">هزینه</string>
+    <string name="add_milestone">افزودون مراحل</string>
+    <string name="put_my_bid">ارسال پیشنهاد</string>
+    <string name="total_milestones_cost">مجموع هزینه مراحل</string>
+    <string name="my_bid">پیشنهاد من</string>
+    <string name="budget">بودجه (تومان)</string>
+    <string name="initial_duration">مدت (روز)</string>
+
+</resources>

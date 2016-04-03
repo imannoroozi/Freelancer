@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follow"
+        android:drawableLeft="@drawable/ic_person_add_black_24dp"
+        android:id="@+id/follow_button"
+        android:layout_margin="2dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_weight="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Name"
+            android:id="@+id/member_name"
+            android:gravity="right"
+            android:padding="2dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Description"
+            android:id="@+id/member_desc"
+            android:gravity="right"
+            android:padding="2dp" />
+
+    </LinearLayout>
+
+    <ir.weproject.freelance.helper.RoundedNetworkImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@android:drawable/btn_star"
+        android:id="@+id/author_image"
+        android:background="@null"
+        android:layout_margin="5dp"/>
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/comment_layout"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:padding="5dp">
+
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right|center"
+        android:hint="@string/cost"
+        android:layout_marginRight="2dp"
+        android:layout_weight=".2"
+        android:id="@+id/milestone_cost"
+        android:padding="2dp" />
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="right|center_vertical"
+        android:layout_marginRight="2dp"
+        android:hint="@string/milestone"
+        android:id="@+id/milestone_name"
+        android:layout_weight=".8"
+        android:padding="2dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cancel_black_24dp"
+        android:id="@+id/remove_milestone_button"
+        android:background="@null" />
+</LinearLayout>
+<!-- From: file:/H:/Projects/Freelance/app/src/main/res/layout/milestone_item_layout.xml -->

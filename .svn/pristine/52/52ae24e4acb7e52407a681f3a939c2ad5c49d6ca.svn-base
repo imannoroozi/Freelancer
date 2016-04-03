@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/comment_layout"
+    android:padding="5dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="skill"
+            android:gravity="right"
+            android:textDirection="rtl"
+            android:textAlignment="gravity"
+            android:id="@+id/milestone_name"
+            android:padding="2dp" />
+
+</LinearLayout>
+<!-- From: file:/H:/Projects/Freelance/app/src/main/res/layout/skill_item_layout.xml -->

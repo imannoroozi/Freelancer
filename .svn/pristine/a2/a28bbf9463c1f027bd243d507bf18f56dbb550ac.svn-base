@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:textIsSelectable="true">
+
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/flipper">
+
+    <!--Edit View **********************************************************************-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_attachment_black_24dp"
+                android:text="Attach Image"
+                android:id="@+id/attach_iamge" />
+
+            <ImageView
+                android:id="@+id/post_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@null" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_edit"
+                android:layout_gravity="right"
+                android:gravity="right|center_vertical"
+                android:hint="Title"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/poet_edit"
+                android:layout_gravity="right"
+                android:gravity="right|center_vertical"
+                android:hint="Poet"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:minLines="10"
+                android:id="@+id/content_edit"
+                android:layout_gravity="center_horizontal"
+                android:gravity="right"
+                android:hint="Poetry"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_check_black_24dp"
+                    android:text="Preview"
+                    android:id="@+id/preview_button"
+                    android:layout_centerVertical="true" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--Preview **************************************************************************** -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/header"
+                android:layout_margin="2dp"
+                android:gravity="center|right"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/post_date_preview"
+                    android:gravity="left"
+                    android:layout_weight="0.3"
+                    android:padding="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/author_name_preview"
+                    android:layout_weight="0.7"
+                    android:gravity="right"
+                    android:padding="2dp" />
+
+                <ir.weproject.freelance.helper.RoundedNetworkImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:src="@android:drawable/btn_star"
+                    android:id="@+id/author_image_preview"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/post_image_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="#000000" />
+
+            <!--Header of Project-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="poet"
+                    android:id="@+id/poem_post_poet_preview"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:layout_weight=".5"
+                    android:padding="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="title"
+                    android:id="@+id/poem_post_title_pewview"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_weight=".5"
+                    android:padding="2dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/poem_post_content_preview"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="2dp"
+                android:background="@color/white"/>
+
+                <!--Project Footer-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_favorite_border_black_24dp"
+                        android:background="@null"
+                        android:id="@+id/likeButtonPreview"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="42"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/post_scorePreview"
+                        android:layout_toRightOf="@+id/likeButtonPreview"
+                        android:layout_toEndOf="@+id/likeButtonPreview"
+                        android:layout_marginRight="7dp"/>
+
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_chat_bubble_outline_black_24dp"
+                        android:background="@null"
+                        android:id="@+id/commentsButtonPreview"
+                        android:layout_alignTop="@+id/post_scorePreview"
+                        android:layout_toRightOf="@+id/post_scorePreview"
+                        android:layout_toEndOf="@+id/post_scorePreview" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="3"
+                        android:gravity="center"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/comment_count"
+                        android:layout_toRightOf="@+id/commentsButtonPreview"
+                        android:layout_toEndOf="@+id/commentsButtonPreview" />
+
+
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_more_vert_black_24dp"
+                        android:background="@null"
+                        android:id="@+id/moreButton"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="5dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_check_black_24dp"
+                    android:id="@+id/post_button"
+                    android:text="Post"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_chevron_left_black_24dp"
+                    android:text="Back"
+                    android:id="@+id/cancel_btton"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/post_button"
+                    android:layout_toEndOf="@+id/post_button" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </ViewFlipper>
+
+</LinearLayout>
+<!-- From: file:/H:/Projects/Freelance/app/src/main/res/layout/activity_post_poem.xml -->

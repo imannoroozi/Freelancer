@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="5dp">
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_assistant_photo_black_24dp"
+            android:background="@drawable/rounded_button"
+            android:id="@+id/reportButton"
+            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_black_24dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/preview_button"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/reportButton"
+            android:layout_toEndOf="@+id/reportButton" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/deleteButton"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/preview_button"
+            android:layout_toEndOf="@+id/preview_button" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bookmark_border_black_24dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/bookmarkButton"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/deleteButton"
+            android:layout_toEndOf="@+id/deleteButton" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chevron_left_black_24dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/backButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/H:/Projects/Freelance/app/src/main/res/layout/test_layout.xml -->

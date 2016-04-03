@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:state_pressed="true">
+		<shape android:shape="oval">
+			<solid android:color="@color/button_material_light"/>
+		</shape>
+	</item>
+</selector><!-- From: file:/H:/Projects/Freelance/app/src/main/res/drawable-xxxhdpi/click_look.xml -->

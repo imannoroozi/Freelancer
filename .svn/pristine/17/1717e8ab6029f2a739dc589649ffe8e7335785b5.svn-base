@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:id="@+id/comment_layout"
+    android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="skill"
+            android:gravity="right"
+            android:textDirection="rtl"
+            android:textAlignment="gravity"
+            android:id="@+id/milestone_name"
+            android:padding="2dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_clear_black_24dp"
+        android:id="@+id/remove_milestone_button" />
+</LinearLayout>

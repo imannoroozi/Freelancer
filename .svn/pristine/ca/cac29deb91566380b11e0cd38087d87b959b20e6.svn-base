@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reportButton"
+        android:text="No"
+        android:background="@drawable/border_button"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/moreButton"
+        android:layout_toStartOf="@+id/moreButton"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moreButton"
+        android:text="Yes"
+        android:background="@drawable/border_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp"/>
+
+    <!--<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/report"
+        android:text="Report"
+        android:background="@drawable/border_button"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/vote_down"
+        android:layout_toEndOf="@+id/vote_down"
+        android:padding="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp" />-->
+</RelativeLayout>
+<!-- From: file:/H:/Projects/Freelance/app/src/main/res/layout/report_alert_dialog.xml -->

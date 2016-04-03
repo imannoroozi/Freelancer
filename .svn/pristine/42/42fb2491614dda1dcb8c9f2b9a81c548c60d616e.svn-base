@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <stroke
+        android:width="1dp"
+        android:color="@color/app_bg" />
+
+    <solid android:color="#ffffff" />
+
+    <padding
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp" />
+
+    <corners android:radius="5dp" />
+</shape><!-- From: file:/H:/Projects/Freelance/app/src/main/res/drawable-xxxhdpi/border_textview.xml -->

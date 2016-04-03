@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Iman\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.3\5b0002c5fb66867ca919be0fbd86de1cfaf76da7\httpmime-4.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b0002c5fb66867ca919be0fbd86de1cfaf76da7">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\httpmime-4.3-93567426f14e4ab953da60866bd5ce52d3dc229b.jar" />
+    </item>
+    <item
+        jar="H:\Projects\Freelance\app\build\intermediates\exploded-aar\com.astuetz\pagerslidingtabstrip\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7912610ed96381c25c36d986eba422731b9641b6">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\classes-8bd8aafdf489fa98642cd35865a1a5e2c426a894.jar" />
+    </item>
+    <item
+        jar="H:\Projects\Freelance\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\classes-1610abf5165b713b45568c7df8dbda46417f3a55.jar" />
+    </item>
+    <item
+        jar="C:\Users\Iman\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.3\11393498b38e9695d0850cac26fde5613ae268b9\httpcore-4.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="11393498b38e9695d0850cac26fde5613ae268b9">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\httpcore-4.3-75aa391ea7326b03ec879c9d76ba4349050c7285.jar" />
+    </item>
+    <item
+        jar="H:\Projects\Freelance\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\classes-05aea58fa2ca2db6832487df23c1dd90da0925fb.jar" />
+    </item>
+    <item
+        jar="H:\Projects\Freelance\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-08c057627d5d7e741865b5de383a2ca1f95dc51b.jar" />
+    </item>
+    <item
+        jar="H:\Projects\Freelance\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\classes-16c31d8f31c1d139b6b2ced4de4cca02eac8a32d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Iman\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="H:\Projects\Freelance\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-9faac8d29c4fff4805c2cdb0b9769221e5e9e2de.jar" />
+    </item>
+
+</items>
