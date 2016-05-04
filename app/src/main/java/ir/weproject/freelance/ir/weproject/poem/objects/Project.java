@@ -1,11 +1,9 @@
 package ir.weproject.freelance.ir.weproject.poem.objects;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -15,12 +13,12 @@ public class Project extends Post implements Serializable{
 
     ArrayList<String> tags;
     ArrayList<Skill> neededSkills;
-    int initialCost;
+    int initialCost, bidsAvg, bidsCount;
     int initialDuration; // if hourly it is in hours otherwise it is in days
     boolean hourly;
 
     public Project(JSONObject jo){
-        this.comments = new ArrayList<Comment>();
+//        this.comments = new ArrayList<Comment>();
         this.neededSkills = new ArrayList<>();
 
         try {
@@ -31,14 +29,16 @@ public class Project extends Post implements Serializable{
             this.setPostType(jo.getString("post_type"));
             this.setInitialCost(jo.getInt("initial_cost"));
             this.setInitialDuration(jo.getInt("initial_duration"));
+            this.setBidsAvg(jo.getInt("avg_bid"));
+            this.setBidsCount(jo.getInt("count_bid"));
 
             this.setUser(new User(jo.getJSONObject("user")));
 
-            JSONArray commentsArray = jo.getJSONArray("comments");
+            /*JSONArray commentsArray = jo.getJSONArray("comments");
 
             for( int i=0; i<commentsArray.length(); i++ ){
                 this.comments.add(new Comment(commentsArray.getJSONObject(i)));
-            }
+            }*/
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -87,5 +87,21 @@ public class Project extends Post implements Serializable{
 
     public void setHourly(boolean hourly) {
         this.hourly = hourly;
+    }
+
+    public int getBidsAvg() {
+        return bidsAvg;
+    }
+
+    public void setBidsAvg(int bidsAvg) {
+        this.bidsAvg = bidsAvg;
+    }
+
+    public int getBidsCount() {
+        return bidsCount;
+    }
+
+    public void setBidsCount(int bidsCount) {
+        this.bidsCount = bidsCount;
     }
 }

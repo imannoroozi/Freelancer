@@ -71,7 +71,17 @@
     <string name="put_my_bid">ارسال پیشنهاد</string>
     <string name="total_milestones_cost">مجموع هزینه مراحل</string>
     <string name="my_bid">پیشنهاد من</string>
-    <string name="budget">بودجه (تومان)</string>
-    <string name="initial_duration">مدت (روز)</string>
+    <string name="budget">بودجه</string>
+    <string name="initial_duration">مدت</string>
+    <string name="bids_avg">میانگین پیشنهادات</string>
+    <string name="bids_count">تعداد پیشنهادات</string>
+    <string name="bid_cost">قیمت پیشنهادی</string>
+    <string name="bid_duration">بودجه</string>
+    <string name="profile">Profile</string>
+    <string name="post">Post</string>
+    <string name="log_out">Log out</string>
+    <string name="about">About</string>
+    <string name="days">روز</string>
+    <string name="remained_duration">زمان باقی مانده</string>
 
 </resources>

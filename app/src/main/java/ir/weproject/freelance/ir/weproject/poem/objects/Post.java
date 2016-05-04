@@ -15,7 +15,7 @@ public abstract class Post {
 
     boolean bookmarked, reported;
 
-    ArrayList<Comment> comments;
+    //ArrayList<Comment> comments;
 
     int postId = 0,
         dateTime = 0;
@@ -48,13 +48,13 @@ public abstract class Post {
 
     public void setPostType(String postType){ this.postType = postType; }
 
-    public ArrayList<Comment> getComments() {
+    /*public ArrayList<Comment> getComments() {
         return comments;
     }
 
     public void setComments(ArrayList<Comment> comments) {
         this.comments = comments;
-    }
+    }*/
 
     public boolean isBookmarked() {
         return bookmarked;

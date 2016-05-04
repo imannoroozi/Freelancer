@@ -7,7 +7,7 @@ public class AppConfig {
 
 
     //Server IP
-    public static String SERVER_IP = "http://192.168.1.105/freelance/webservice/";
+    public static String SERVER_IP = "http://192.168.1.100/freelance/webservice/";
     public static String URL_READ_HOME_POSTS = SERVER_IP + "read_home_posts.php";
     public static String URL_READ_PROJECTS = SERVER_IP + "readProjects.php";
     public static String URL_REGISTER = SERVER_IP + "register.php";
@@ -30,7 +30,7 @@ public class AppConfig {
     public static final String FILE_UPLOAD_URL = SERVER_IP + "profileImageUpload.php";
 
     //Registration level
-    public static enum REGISTRATION_LEVEL { WELCOME, SKILL_INFOR, PROFILE_IMAGE, SELECT_ROLE, PERSONAL_INFORMATION, COMPLETE};
+    public static enum REGISTRATION_LEVEL { WELCOME, SKILL_INFOR, PROFILE_IMAGE, SELECT_ROLE, PERSONAL_INFORMATION, COMPLETE}
 
     // Directory name to store captured images and videos
     public static final String IMAGE_DIRECTORY_NAME = "Android File Upload";

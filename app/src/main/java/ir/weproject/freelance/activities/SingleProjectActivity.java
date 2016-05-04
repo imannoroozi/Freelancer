@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -23,64 +21,79 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import ir.weproject.freelance.freelance.AppConfig;
 import ir.weproject.freelance.freelance.AppController;
+import ir.weproject.freelance.freelance.BidsAdapter;
 import ir.weproject.freelance.freelance.R;
 import ir.weproject.freelance.freelance.ReportAlertDialog;
 import ir.weproject.freelance.helper.Farsi;
-import ir.weproject.freelance.helper.SQLiteHandler;
+import ir.weproject.freelance.helper.ImageHelper;
+import ir.weproject.freelance.helper.RoundedNetworkImageView;
 import ir.weproject.freelance.helper.SessionManager;
-import ir.weproject.freelance.ir.weproject.poem.objects.Comment;
+import ir.weproject.freelance.ir.weproject.poem.objects.Bid;
 import ir.weproject.freelance.ir.weproject.poem.objects.Project;
-import ir.weproject.freelance.ir.weproject.poem.objects.Skill;
 
 
 public class SingleProjectActivity extends AppCompatActivity {
 
-    Button okButton;
     SessionManager session;
 
     Project project;
-    public enum ACTIONS {LIKE_POST, BOOKMARK_POST, REPORT_POST, INSERT_COMMENT, RATE_POST};
+    int bidsPage = 1;
+    public enum ACTIONS {GET_POST, LIKE_POST, BOOKMARK_POST, REPORT_POST, RATE_POST, GET_BIDS};
+
+    TextView title,
+            authorName ,
+            date ,
+            initialCost,
+            initialDuration,
+            content,
+            neededSkills;
+    RoundedNetworkImageView authorImage;
+    ImageButton bookmarkButton ,
+            reportButton,
+            moreButton ,
+            backButton;
+    Button bidButton;
+    ArrayList<Bid> bids;
+    BidsAdapter bidAdapter;
+    ListView bidsListView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_project);
 
-        final HashMap<String, String> user;
-        SQLiteHandler db = new SQLiteHandler(SingleProjectActivity.this);
-        user = db.getUserDetails();
+        session = new SessionManager(this);
+        bids = new ArrayList<>();
+//        project = (Project) getIntent().getSerializableExtra(AppConfig.EXTRA_KEY_PROJECT_OBJECT);
 
-        project = (Project) getIntent().getSerializableExtra(AppConfig.EXTRA_KEY_PROJECT_OBJECT);
+        title = (TextView) findViewById(R.id.poem_post_title);
+        authorName = (TextView) findViewById(R.id.author_name);
+        date = (TextView) findViewById(R.id.posted_date);
+        content = (TextView) findViewById(R.id.poem_post_content);
+        initialCost = (TextView) findViewById(R.id.initial_cost);
+        initialDuration = (TextView) findViewById(R.id.initial_duration);
+        authorImage = (RoundedNetworkImageView) findViewById(R.id.author_image);
+        bookmarkButton = (ImageButton) findViewById(R.id.bookmarkButton);
+        reportButton = (ImageButton) findViewById(R.id.reportButton);
+        moreButton = (ImageButton) findViewById(R.id.moreButton);
+        backButton = (ImageButton) findViewById(R.id.backButton);
+        bidButton = (Button) findViewById(R.id.bidButton);
+        bidsListView = (ListView) findViewById(R.id.bids_list);
 
-        TextView title = (TextView) findViewById(R.id.poem_post_title);
-//        TextView authorName = (TextView) rowView.findViewById(R.id.author_name);
-        TextView date = (TextView) findViewById(R.id.posted_date);
-        final TextView content = (TextView) findViewById(R.id.poem_post_content);
-        TextView initialCost = (TextView) findViewById(R.id.initial_cost);
-        TextView initialDuration = (TextView) findViewById(R.id.initial_duration);
-//        RoundedNetworkImageView authorImage = (RoundedNetworkImageView) rowView.findViewById(R.id.author_image);
-        ImageButton bookmarkButton = (ImageButton) findViewById(R.id.bookmarkButton);
-        ImageButton reportButton = (ImageButton) findViewById(R.id.reportButton);
-        ImageButton moreButton = (ImageButton) findViewById(R.id.moreButton);
-        ImageButton backButton = (ImageButton) findViewById(R.id.backButton);
-        Button bidButton = (Button) findViewById(R.id.bidButton);
-
-        TextView neededSkills = (TextView) findViewById(R.id.neededSkills);
-        if( project.getNeededSkills() != null && project.getNeededSkills().size() > 0 ) {
+        neededSkills = (TextView) findViewById(R.id.neededSkills);
+        /*if( project.getNeededSkills() != null && project.getNeededSkills().size() > 0 ) {
             neededSkills.setText(Skill.getNeededSkillsString(project.getNeededSkills()));
         }else{
             RelativeLayout skillsHeaderLayout = (RelativeLayout) findViewById(R.id.needed_skills_header_layout);
             skillsHeaderLayout.setVisibility(View.GONE);
-        }
-
-//        final EditText commentContent = (EditText) rowView.findViewById(R.id.comment_content);
-//        ImageButton sendComment = (ImageButton) rowView.findViewById(R.id.send_commnet);
-//        TextView scoreText = (TextView) rowView.findViewById(R.id.post_score);
+        }*/
 
         final ViewFlipper viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         View.OnClickListener viewFlipperListener = new View.OnClickListener() {
@@ -101,43 +114,33 @@ public class SingleProjectActivity extends AppCompatActivity {
         moreButton.setOnClickListener(viewFlipperListener);
         backButton.setOnClickListener(viewFlipperListener);
 
-//        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-//        RoundedNetworkImageView authorImageNewComment = (RoundedNetworkImageView) rowView.findViewById(R.id.new_comment_author_image);
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.bidder_rating_bar);
 
-//        ListView comments = (ListView) rowView.findViewById(R.id.listView);
-
-        title.setText(Farsi.Convert(project.getTitle()));
-        date.setText(Farsi.Convert(project.getDate()));
-        content.setText(Farsi.Convert(project.getDescription()));
-        initialCost.setText(String.valueOf(project.getInitialCost()));
-        initialDuration.setText(String.valueOf(project.getInitialDuration()));
-//        ImageHelper.loadNetworkImage(getContext(), authorImage, project.getUser().getImageAddress());
-
-        /*authorImage.setOnClickListener(new View.OnClickListener() {
+        authorImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent viewProfileIntent = new Intent(context, ViewProfileActivity.class);
-                viewProfileIntent.putExtra(AppConfig.EXTRA_KEY_USER_ID, String.valueOf((new SessionManager(context)).getCurrentUserID()));
+                Intent viewProfileIntent = new Intent(SingleProjectActivity.this, ViewProfileActivity.class);
+                viewProfileIntent.putExtra(AppConfig.EXTRA_KEY_USER_ID, String.valueOf((new SessionManager(SingleProjectActivity.this)).getCurrentUserID()));
                 viewProfileIntent.putExtra(AppConfig.EXTRA_KEY_AUTHOR_OBJECT, (Serializable) project.getUser());
-                context.startActivity(viewProfileIntent);
+                startActivity(viewProfileIntent);
             }
-        });*/
+        });
 
-        /*ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 ratingBar.setFocusable(false);
-                postAction(Integer.parseInt(user.get("uid")), freelance.getPostId(), rating, "RATE_POST");
+                postAction( ACTIONS.BOOKMARK_POST, null);
             }
-        });*/
+        });
 
-        /*bookmarkButton.setOnClickListener(new View.OnClickListener() {
+        bookmarkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //likeButton.setFocusable(false);
-                postAction(rowView, Integer.parseInt(user.get("uid")), project.getPostId(), (project.isBookmarked() ? 0 : 1), ACTIONS.BOOKMARK_POST, position, "");
+                postAction( ACTIONS.BOOKMARK_POST, null);
             }
-        });*/
+        });
 
         reportButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,13 +151,28 @@ public class SingleProjectActivity extends AppCompatActivity {
                 viewFlipper.showNext();
             }
         });
+
+        HashMap<String, String> data = new HashMap<>();
+        data.put("user_id", String.valueOf(session.getCurrentUserID()));
+        data.put("project_id", String.valueOf(getIntent().getIntExtra(AppConfig.EXTRA_KEY_PROJECT_ID,0)));
+        postAction(ACTIONS.GET_POST, data);
+
+        //load the bid list
+        bidAdapter = new BidsAdapter(SingleProjectActivity.this, bids);
+        bidsListView.setAdapter(bidAdapter);
+        postAction(ACTIONS.GET_BIDS, data);
     }
 
     private void postAction(final ACTIONS action , final HashMap<String,String> data) {
 
-        String tag_string_req = "posts_req";
+        String tag_string_req = "projects_req";
         String action_URL = "";
+
         switch (action){
+            case GET_POST:
+            case GET_BIDS:
+                action_URL = AppConfig.URL_READ_PROJECTS;
+                break;
             case LIKE_POST:
                 action_URL = AppConfig.URL_LIKE_POSTS;
                 break;
@@ -164,10 +182,6 @@ public class SingleProjectActivity extends AppCompatActivity {
             case REPORT_POST:
                 action_URL = AppConfig.URL_REPORT_POSTS;
                 break;
-            case RATE_POST:
-                break;
-            case INSERT_COMMENT:
-                action_URL = AppConfig.URL_COMMENTS;
             default:
                 break;
         }
@@ -190,41 +204,45 @@ public class SingleProjectActivity extends AppCompatActivity {
                 }
 
                 switch (action){
+
+                    case GET_POST:
+                        try {
+                            project = new Project(jObj.getJSONObject("post"));
+                            updateView();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case GET_BIDS:
+                        JSONArray jsonPosts = null;
+                        try {
+                            jsonPosts = jObj.getJSONArray("bids");
+                            for(int i=0; i<jsonPosts.length(); i++){
+                                bids.add(new Bid(jsonPosts.getJSONObject(i)));
+                            }
+                            bidAdapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        break;
                     case LIKE_POST:
 
                         break;
                     case BOOKMARK_POST:
 //                        bookmarkButton.setCompoundDrawablesWithIntrinsicBounds(null, ContextCompat.getDrawable(context, rate == 1 ? R.drawable.ic_bookmark_black_24dp : R.drawable.ic_bookmark_border_black_24dp), null, null);
-
                         project.setBookmarked(1 == 1 ? true : false);
                         break;
                     case REPORT_POST:
                         Toast.makeText(SingleProjectActivity.this, "Reported", Toast.LENGTH_LONG).show();
                         break;
                     case RATE_POST:
-                        //                ratingBar.setFocusable(true);
                         break;
-                    case INSERT_COMMENT:
-                        try {
-                            JSONArray jsonComments = jObj.getJSONArray("comments");
-                            project.getComments().clear();
-                            for(int i=0; i<jsonComments.length(); i++){
-                                project.getComments().add(new Comment(jsonComments.getJSONObject(i)));
-                            }
-                            ListView comments = ((ListView) findViewById(R.id.listView));
-                            ((BaseAdapter) comments.getAdapter()).notifyDataSetChanged();
-                            //setListViewHeightBasedOnChildren(comments);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
 
-                        break;
                     default:
                         break;
                 }
             }
         }, new Response.ErrorListener() {
-
             @Override
             public void onErrorResponse(VolleyError error) {
                 //show the error
@@ -233,10 +251,8 @@ public class SingleProjectActivity extends AppCompatActivity {
         }) {
             @Override
             protected Map<String, String> getParams() {
-
                 // Posting parameters to url
-                Map<String, String> params = new HashMap<>();
-                params = data;
+                Map<String, String> params = data;
                 params.put("action", action.name());
                 return params;
             }
@@ -245,5 +261,14 @@ public class SingleProjectActivity extends AppCompatActivity {
             // Adding request to request queue
             AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
         }
+    }
+
+    public void updateView(){
+        title.setText(Farsi.Convert(project.getTitle()));
+        date.setText(Farsi.Convert(project.getDate()));
+        content.setText(Farsi.Convert(project.getDescription()));
+        initialCost.setText(String.valueOf(project.getInitialCost()));
+        initialDuration.setText(String.valueOf(project.getInitialDuration()));
+        ImageHelper.loadNetworkImage(SingleProjectActivity.this, authorImage, project.getUser().getImageAddress());
     }
 }

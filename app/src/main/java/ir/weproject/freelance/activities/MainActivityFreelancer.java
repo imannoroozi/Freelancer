@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -31,11 +32,13 @@ public class MainActivityFreelancer extends AppCompatActivity {
 
     private String[] menuItemNames;
     private DrawerLayout mDrawerLayout;
+    private LinearLayout linearDrawer;
     ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[6];
     private ListView mDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
+
     private CharSequence mTitle;
     SessionManager session;
 
@@ -48,7 +51,7 @@ public class MainActivityFreelancer extends AppCompatActivity {
         // Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new ProjectFragmentAdapter(getSupportFragmentManager()));
-        viewPager.setCurrentItem(2);
+        viewPager.setCurrentItem(3);
 
         // Give the PagerSlidingTabStrip the ViewPager
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
@@ -57,6 +60,7 @@ public class MainActivityFreelancer extends AppCompatActivity {
 
         menuItemNames = getResources().getStringArray(R.array.main_menu_items);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        linearDrawer = (LinearLayout) findViewById(R.id.linearDrawer);
         mDrawerList = (ListView) findViewById(R.id.right_drawer);
 
         //list of drawer icons
@@ -96,9 +100,7 @@ public class MainActivityFreelancer extends AppCompatActivity {
                 getActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
-
         };
-
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -112,7 +114,7 @@ public class MainActivityFreelancer extends AppCompatActivity {
     /** Swaps fragments in the main content view */
     private void selectItem(int position) {
 
-        mDrawerLayout.closeDrawer(mDrawerList);
+        mDrawerLayout.closeDrawer(linearDrawer);
             Fragment fragment = null;
             Intent intent = null;
 
@@ -177,10 +179,10 @@ public class MainActivityFreelancer extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.action_more:
-                if( mDrawerLayout.isDrawerOpen(mDrawerList)){
-                    mDrawerLayout.closeDrawer(mDrawerList);
+                if( mDrawerLayout.isDrawerOpen(linearDrawer)){
+                    mDrawerLayout.closeDrawer(linearDrawer);
                 }else{
-                    mDrawerLayout.openDrawer(mDrawerList);
+                    mDrawerLayout.openDrawer(linearDrawer);
                 }
                 break;
         }
@@ -200,8 +202,8 @@ public class MainActivityFreelancer extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if( mDrawerLayout.isDrawerOpen(mDrawerList)){
-            mDrawerLayout.closeDrawer(mDrawerList);
+        if( mDrawerLayout.isDrawerOpen(linearDrawer)){
+            mDrawerLayout.closeDrawer(linearDrawer);
         }else{
             super.onBackPressed();
         }

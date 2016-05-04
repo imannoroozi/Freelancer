@@ -1,149 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:clickable="true"
-    android:background="@drawable/background"
     android:id="@+id/project_layout"
     android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/abc_search_url_text_normal"
-            android:layout_weight="1">
+            android:layout_marginTop="15dp"
+            android:gravity="right|center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="posted date"
-                android:id="@+id/posted_date"
-                android:gravity="left"
-                android:layout_weight=".2"
-                android:padding="2dp" />
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:id="@+id/poem_post_title"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginRight="5dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="title"
-                android:id="@+id/poem_post_title"
-                android:layout_gravity="right"
-                android:gravity="right"
-                android:layout_weight="8"
-                android:padding="2dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_size_small"
+                        android:layout_gravity="right"
+                        android:textColor="@color/schemeDarkGray"
+                        android:text="@string/days"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_size_small"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/schemeDarkGray"
+                        android:text="posted date"
+                        android:id="@+id/posted_date"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:layout_marginLeft="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="right"
+                        android:layout_gravity="right"
+                        android:textSize="@dimen/font_size_small"
+                        android:textColor="@color/schemeDarkGray"
+                        android:text="@string/remained_duration"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <ir.weproject.freelance.helper.RoundedNetworkImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@android:drawable/btn_star"
+                android:id="@+id/employer_image"
+                android:layout_marginRight="5dp"
+                android:background="@null" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-    <!--Header of Project-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Project Desc"
-        android:id="@+id/poem_post_content"
-        android:gravity="right"
-        android:padding="2dp"/>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="right">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bidNoLayout"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:background="@drawable/border_textview"
-            android:layout_marginLeft="5dp"
-            android:padding="3dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/initial_duration"/>
+            android:layout_marginLeft="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/initial_duration"
-                android:text="4" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:padding="3dp"
-            android:orientation="vertical"
-            android:background="@drawable/border_textview"
-            android:gravity="center"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/bidNoLayout">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/budget"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
+                android:textSize="@dimen/font_size_small"
+                android:textColor="@color/schemeGray"
+                android:text="@string/toman"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/initial_cost"
-                android:text="5000"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_marginLeft="3dp"
+                android:text="5000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_small"
+                android:textColor="@color/schemeGray"
+                android:layout_marginLeft="3dp"
+                android:text="@string/budget"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/material_blue_grey_800"
+                android:layout_weight=".9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_small"
+                android:textColor="@color/schemeGray"
+                android:text="@string/days"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/initial_duration"
+                android:layout_marginLeft="3dp"
+                android:text="4" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/schemeGray"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="5dp"
+                android:textSize="@dimen/font_size_small"
+                android:text="@string/initial_duration"/>
 
         </LinearLayout>
 
     </RelativeLayout>
 
-    <!--Needed Skills Header-->
-    <RelativeLayout
+    <!--count and avg of bids-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:id="@+id/needed_skills_header_layout"
-        android:weightSum="1">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/app_bg"
-            android:layout_weight=".9"
-            android:layout_margin="5dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/needed_skills_header"
-            android:layout_toStartOf="@+id/needed_skills_header" />
+        android:gravity="right"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/avg_bids"
+            android:layout_marginLeft="3dp"
+            android:text="10000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/needed_skills"
+            android:layout_marginLeft="3dp"
+            android:textSize="@dimen/font_size_small"
+            android:textColor="@color/schemeGray"
+            android:text="@string/bids_avg"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_margin="5dp"
+            android:background="@color/material_blue_grey_800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/count_bids"
+            android:text="5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:layout_weight=".1"
-            android:id="@+id/needed_skills_header"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+            android:textSize="@dimen/font_size_small"
+            android:textColor="@color/schemeGray"
+            android:layout_marginLeft="3dp"
+            android:text="@string/bids_count"/>
+
+    </LinearLayout>
+
 
     <!--Skills should place here-->
     <LinearLayout
@@ -163,279 +216,6 @@
 
     </LinearLayout>
 
-    <ViewFlipper android:id="@+id/viewFlipper"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-        <!--Project Footer-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_touch_app_black_24dp"
-                android:background="@drawable/rounded_corner_button"
-                android:padding="10dp"
-                android:text="@string/put_bid"
-                android:id="@+id/bidButton"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignBottom="@+id/moreButton" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_more_vert_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:id="@+id/moreButton"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:padding="10dp"
-                android:layout_marginRight="5dp"/>
-
-        </RelativeLayout>
-
-
-        <!--Biddding View-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:padding="5dp">
-
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_assistant_photo_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:id="@+id/reportButton"
-                android:padding="10dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_share_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/preview_button"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/reportButton"
-                android:layout_toEndOf="@+id/reportButton" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_delete_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/deleteButton"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/preview_button"
-                android:layout_toEndOf="@+id/preview_button" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_bookmark_border_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/bookmarkButton"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/deleteButton"
-                android:layout_toEndOf="@+id/deleteButton" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_chevron_left_black_24dp"
-                android:background="@drawable/rounded_button"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/backButton"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-        </RelativeLayout>
-
-    </ViewFlipper>
-
-    <!--Section Header-->
-    <!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/app_bg"
-            android:layout_weight=".9"
-            android:layout_margin="5dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/employer_info_header"
-            android:layout_toStartOf="@+id/employer_info_header" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/employer_info"
-            android:layout_marginRight="5dp"
-            android:layout_weight=".1"
-            android:id="@+id/employer_info_header"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/header"
-        android:background="@color/white"
-        android:gravity="center_vertical|right"
-        android:weightSum="1">
-
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:progressDrawable="@drawable/rating_bar_selector"
-            android:stepSize="1"
-            android:rating="3.5"
-            android:layout_gravity="center_vertical"
-            android:numStars="5"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="4.0"
-            android:id="@+id/rate"
-            android:layout_weight="0.7"
-            android:gravity="right"
-            android:layout_marginLeft="2dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/ratingBar"
-            android:layout_toEndOf="@+id/ratingBar" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="(24)"
-            android:id="@+id/reviews"
-            android:layout_weight="0.7"
-            android:gravity="right"
-            android:layout_marginLeft="2dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/rate"
-            android:layout_toEndOf="@+id/rate" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="employer"
-            android:id="@+id/author_name"
-            android:layout_weight="0.7"
-            android:gravity="right"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/author_image"
-            android:layout_toStartOf="@+id/author_image" />
-
-        <ir.weproject.freelance.helper.RoundedNetworkImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:src="@android:drawable/btn_star"
-            android:id="@+id/author_image"
-            android:background="@null"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>-->
-
-
-<!--
-    &lt;!&ndash;Insert comment section&ndash;&gt;
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_check_black_24dp"
-            android:background="@null"
-            android:id="@+id/send_commnet"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/comment_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/send_commnet"
-            android:layout_alignBottom="@+id/send_commnet"
-            android:padding="2dp"
-            android:layout_marginLeft="2dp"
-            android:background="@color/button_material_light"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:gravity="right|center_vertical"
-            android:textDirection="rtl"
-            android:hint="Comment here..."
-            android:inputType="textMultiLine|textCapSentences"/>
-
-        &lt;!&ndash;<freelancelance.helper.RoundedNetworkImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:src="@android:drawable/btn_star"
-            android:id="@+id/new_comment_author_image"
-            android:background="@null"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />&ndash;&gt;
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/black"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView" />-->
-
-</LinearLayout>
+</RelativeLayout>

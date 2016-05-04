@@ -10,11 +10,31 @@ import java.util.ArrayList;
  * Created by Iman on 3/31/2016.
  */
 public class Bid {
-    int bidID, projectID, duration, bidderID;
+    int bidID, projectID, duration, bidderID, milestoneCount;
     double cost;
     String description, date;
+    User user;
 
     ArrayList<Milestone> milestones;
+
+    public Bid(){}
+
+    public Bid(JSONObject jo) {
+        try {
+            this.setProjectID(jo.getInt("project_id"));
+            this.setBidID(jo.getInt("id"));
+            this.setBidderID(jo.getInt("bider_id"));
+            this.setDuration(jo.getInt("duration"));
+            this.setCost(jo.getDouble("cost"));
+            this.setDescription(jo.getString("description"));
+            this.setMilestoneCount(jo.getInt("milestone_count"));
+            this.setDate(jo.getString("date"));
+
+            this.setUser(new User(jo.getJSONObject("user")));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     public JSONObject toJSON(){
         JSONObject jo = new JSONObject();
@@ -101,5 +121,21 @@ public class Bid {
 
     public void setBidID(int bidID) {
         this.bidID = bidID;
+    }
+
+    public int getMilestoneCount() {
+        return milestoneCount;
+    }
+
+    public void setMilestoneCount(int milestoneCount) {
+        this.milestoneCount = milestoneCount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

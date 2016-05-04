@@ -86,6 +86,8 @@
         </activity>
         <activity android:name="ir.weproject.freelance.activities.PersonalInformationActivity" >
         </activity>
+        <activity android:name="ir.weproject.freelance.activities.SingleProjectActivity" >
+        </activity>
         <activity android:name="ir.weproject.freelance.activities.PutBidActivity"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.Transparent">
