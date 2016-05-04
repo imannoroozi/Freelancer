@@ -7,7 +7,7 @@ public class AppConfig {
 
 
     //Server IP
-    public static String SERVER_IP = "http://192.168.1.100/freelance/webservice/";
+    public static String SERVER_IP = "http://www.weproject.ir/webservice/";
     public static String URL_READ_HOME_POSTS = SERVER_IP + "read_home_posts.php";
     public static String URL_READ_PROJECTS = SERVER_IP + "readProjects.php";
     public static String URL_REGISTER = SERVER_IP + "register.php";

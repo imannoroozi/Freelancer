@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -42,13 +41,13 @@ public class PostsAdapter extends ArrayAdapter<Post> {
         Post post = getItem(position);
 
         if( post instanceof Project){
-            return createPoemView((Project)post, position, parent);
+            return createProjectView((Project)post, position, parent);
         }else{
             return null;
         }
     }
 
-    private View createPoemView(final Project project, final int position, ViewGroup parent) {
+    private View createProjectView(final Project project, final int position, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.project_post, parent, false);
