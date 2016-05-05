@@ -80,7 +80,7 @@ public class SingleProjectActivity extends AppCompatActivity {
         content = (TextView) findViewById(R.id.poem_post_content);
         initialCost = (TextView) findViewById(R.id.initial_cost);
         initialDuration = (TextView) findViewById(R.id.initial_duration);
-        authorImage = (RoundedNetworkImageView) findViewById(R.id.author_image);
+        authorImage = (RoundedNetworkImageView) findViewById(R.id.user_image);
         bookmarkButton = (ImageButton) findViewById(R.id.bookmarkButton);
         reportButton = (ImageButton) findViewById(R.id.reportButton);
         moreButton = (ImageButton) findViewById(R.id.moreButton);

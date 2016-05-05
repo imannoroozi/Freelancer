@@ -18,13 +18,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily=""
+            android:textColor="@color/schemeWhite"
+            android:background="@drawable/border_textview"
             android:text="posted date"
             android:id="@+id/posted_date"
             android:gravity="left"
             android:layout_weight=".2"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp"/>
+            android:padding="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,18 +96,16 @@
                 </LinearLayout>
             </LinearLayout>
 
-
             <ir.weproject.freelance.helper.RoundedNetworkImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:src="@android:drawable/btn_star"
-                android:id="@+id/author_image"
-                android:background="@null"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:id="@+id/user_image"
+                android:layout_marginLeft="5dp"
+                android:background="@null" />
+
         </LinearLayout>
 
     <!--Header of Project-->
@@ -119,6 +117,7 @@
         android:id="@+id/poem_post_content"
         android:gravity="right"
         android:textDirection="ltr"
+        android:layout_marginTop="8dp"
         android:padding="2dp"/>
 
     <RelativeLayout
