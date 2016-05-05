@@ -33,6 +33,7 @@
             android:id="@+id/poem_post_title"
             android:layout_gravity="right"
             android:gravity="right"
+            android:textSize="@dimen/font_size_large"
             android:layout_weight="8"
             android:padding="5dp"
             android:layout_marginRight="5dp"/>
@@ -141,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font_size_small"
                 android:textColor="@color/schemeWhite"
-                android:text="@string/initial_duration"/>
+                android:text="@string/duration"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -181,6 +182,24 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+        <!--Skills should place here-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/neededSkills"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:text="Android"/>
+
+        </LinearLayout>
 
     <!--count and avg of bids-->
     <LinearLayout
@@ -227,7 +246,7 @@
     </LinearLayout>
 
     <!--Needed Skills Header-->
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -258,25 +277,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+    </RelativeLayout>-->
 
-    <!--Skills should place here-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/neededSkills"
-            android:padding="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="2dp"
-            android:text="Android"/>
 
-    </LinearLayout>
 
     <!--Section Header-->
     <!--<RelativeLayout
@@ -423,6 +426,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:id="@+id/bids_list"></ListView>
 
 <!--

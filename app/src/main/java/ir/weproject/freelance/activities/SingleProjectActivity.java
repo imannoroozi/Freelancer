@@ -75,6 +75,7 @@ public class SingleProjectActivity extends AppCompatActivity {
 
         title = (TextView) findViewById(R.id.poem_post_title);
         authorName = (TextView) findViewById(R.id.author_name);
+
         date = (TextView) findViewById(R.id.posted_date);
         content = (TextView) findViewById(R.id.poem_post_content);
         initialCost = (TextView) findViewById(R.id.initial_cost);
@@ -86,7 +87,6 @@ public class SingleProjectActivity extends AppCompatActivity {
         backButton = (ImageButton) findViewById(R.id.backButton);
         bidButton = (Button) findViewById(R.id.bidButton);
         bidsListView = (ListView) findViewById(R.id.bids_list);
-
         neededSkills = (TextView) findViewById(R.id.neededSkills);
         /*if( project.getNeededSkills() != null && project.getNeededSkills().size() > 0 ) {
             neededSkills.setText(Skill.getNeededSkillsString(project.getNeededSkills()));

@@ -83,5 +83,6 @@
     <string name="about">About</string>
     <string name="days">روز</string>
     <string name="remained_duration">زمان باقی مانده</string>
+    <string name="duration">مدت (روز)</string>
 
 </resources>
