@@ -85,4 +85,6 @@
     <string name="remained_duration">زمان باقی مانده</string>
     <string name="duration">مدت (روز)</string>
 
+    <string name='title_activity_project_type'>نوع پروژه را تعریف کنید</string>
+
 </resources>

@@ -45,6 +45,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="ir.weproject.freelance.activities.ProjectTypeEmployerActivity"
+            android:label="@string/title_activity_project_type" >
+        </activity>
+        <activity
+            android:name="ir.weproject.freelance.activities.ProjectDetailActivity"
+            android:label="@string/title_activity_project_type" >
+        </activity>
+        <activity
             android:name="ir.weproject.freelance.activities.LoginActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
