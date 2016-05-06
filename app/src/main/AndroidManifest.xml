@@ -35,7 +35,7 @@
             android:value="AIzaSyAXFEIqeQuqmwNM0NXlWPoFHlY0cVsVwdU" />
 
         <activity
-            android:name="ir.weproject.freelance.activities.RegisterActivity"
+            android:name="ir.weproject.freelance.activities.FirstActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
@@ -48,6 +48,15 @@
             android:name="ir.weproject.freelance.activities.ProjectTypeEmployerActivity"
             android:label="@string/title_activity_project_type" >
         </activity>
+        <activity
+            android:name="ir.weproject.freelance.activities.RegisterActivity"
+            android:label="@string/title_activity_project_type" >
+        </activity>
+        <activity
+            android:name="ir.weproject.freelance.activities.MainActivityEmployer"
+            android:label="@string/title_activity_project_type" >
+        </activity>
+
         <activity
             android:name="ir.weproject.freelance.activities.ProjectDetailActivity"
             android:label="@string/title_activity_project_type" >

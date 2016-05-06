@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:text="Freelancer Login"
+        android:id="@+id/freelancerLogin"
+        android:layout_weight="0.20" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:text="Employer Login"
+        android:id="@+id/employerLogin"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.26" />
+</LinearLayout>
